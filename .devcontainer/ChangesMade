@@ -1,3 +1,9 @@
-installed pip // This is not needed
+install pip
 sudo apt install ros-humble-tf-transformations
+sudo apt install ros-humble-gazebo*
 
+# Add it to the bashrc file
+source /usr/share/gazebo/setup.bash
+
+# install pip3 also
+pip3 install setuptools==58.2.0
