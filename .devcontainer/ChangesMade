@@ -1,0 +1,13 @@
+install pip
+sudo apt install ros-humble-tf-transformations
+sudo apt install ros-humble-gazebo*
+
+# Add it to the bashrc file
+source /usr/share/gazebo/setup.bash
+
+# install pip3 also
+pip3 install setuptools==58.2.0
+
+
+# From website - https://automaticaddison.com/how-to-model-a-robotic-arm-with-a-urdf-file-ros-2/
+sudo apt-get install rename
