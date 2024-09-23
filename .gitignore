@@ -4,8 +4,8 @@
 !.devcontainer/**
 !commands-used.sh
 !python-node-template.py
-!robotic-arm-ws
-!robotic-arm-ws/**
+!.vscode
+!.vscode/**
 
 # Common Folders
 install/
