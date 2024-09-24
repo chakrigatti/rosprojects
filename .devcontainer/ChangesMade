@@ -11,3 +11,9 @@ pip3 install setuptools==58.2.0
 
 # From website - https://automaticaddison.com/how-to-model-a-robotic-arm-with-a-urdf-file-ros-2/
 sudo apt-get install rename
+
+# For simulating in new gazebo - https://automaticaddison.com/how-to-simulate-a-robotic-arm-in-gazebo-ros-2/
+sudo apt-get install ros-${ROS_DISTRO}-ros-gz
+
+pip3 install numpy
+
