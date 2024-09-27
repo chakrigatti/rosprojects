@@ -59,7 +59,7 @@ def generate_launch_description():
         package='joint_state_publisher',
         executable='joint_state_publisher',
         name='joint_state_publisher',
-        condition=UnlessCondition(jsp_gui))
+    )
  
     # Depending on gui parameter, either launch joint_state_publisher or joint_state_publisher_gui
     start_joint_state_publisher_gui_cmd = Node(
@@ -67,6 +67,13 @@ def generate_launch_description():
         executable='joint_state_publisher_gui',
         name='joint_state_publisher_gui',
         condition=IfCondition(jsp_gui))
+
+    robot_controller_node = Node(
+        package='mycobot_arm_controller',
+        executable='control_joint',
+        name='control_joint',
+        output='screen',
+    )
  
     # Subscribe to the joint states of the robot, and publish the 3D pose of each link.
     robot_description_content = ParameterValue(Command(['xacro ', urdf_model]), value_type=str)
@@ -101,8 +108,9 @@ def generate_launch_description():
     ld.add_action(declare_use_sim_time_cmd)
  
     # Add any actions
-    ld.add_action(start_joint_state_publisher_cmd)
-    ld.add_action(start_joint_state_publisher_gui_cmd)
+    # ld.add_action(start_joint_state_publisher_cmd)
+    # ld.add_action(start_joint_state_publisher_gui_cmd)
+    ld.add_action(robot_controller_node)
     ld.add_action(start_robot_state_publisher_cmd)
     ld.add_action(start_rviz_cmd)
  

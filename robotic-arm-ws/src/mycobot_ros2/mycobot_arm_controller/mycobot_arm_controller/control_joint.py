@@ -17,8 +17,22 @@ class JointController(Node):
 
         # Initializing joint states
         self.joint_state = JointState()
-        self.joint_state.name = ['joint_1', 'joint_2']
-        self.joint_state.position = [0.0, 0.0]
+        self.joint_state.name = [
+            'link1_to_link2', 
+            'link2_to_link3',
+            'link3_to_link4',
+            'link4_to_link5',
+            'link5_to_link6',
+            'link6_to_link6flange',
+            'gripper_controller',
+            'gripper_base_to_gripper_left2',
+            'gripper_left3_to_gripper_left1',
+            'gripper_base_to_gripper_right3',
+            'gripper_base_to_gripper_right2',
+            'gripper_right3_to_gripper_right1'
+        ]
+        self.joint_count = len(self.joint_state.name)
+        self.joint_state.position = [0.0] * self.joint_count
         self.angle = 0.0
 
     def timer_callback(self):

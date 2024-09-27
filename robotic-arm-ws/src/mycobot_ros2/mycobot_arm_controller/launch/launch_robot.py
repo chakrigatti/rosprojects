@@ -22,12 +22,17 @@ def generate_launch_description():
             parameters=[{'robot_description': robot_description}]
         ),
         
-        # Launch joint controller script
+        # # Launch joint controller script
+        # Node(
+        #     package='mycobot_arm_controller',
+        #     executable='control_joint',
+        #     name='control_joint',
+        #     output='screen',
+        # ),
+
         Node(
-            package='mycobot_arm_controller',
-            executable='control_joint',
-            name='control_joint',
-            output='screen',
+            package="joint_state_publisher_gui",
+            executable="joint_state_publisher_gui"
         ),
 
         # Launch RViz
